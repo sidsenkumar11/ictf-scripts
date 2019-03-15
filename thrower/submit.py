@@ -9,7 +9,7 @@ def log(x):
 
 def usage():
     print "TODO: Enter our own host IP in this script!"
-    print "python submit_real_service.py <http://team_interface> <flag_token> <service_name>"
+    print "python submit.py <http://team_interface> <flag_token> <service_name>"
     print "The actual exploit script should take parameters like as follows: "
     print "python <service_name>.py <hostname> <port> <flag_id>"
     sys.exit(1)
