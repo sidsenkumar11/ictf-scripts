@@ -12,15 +12,15 @@ In my class CTF, we were put on a box from which we had to automatically exploit
 
 4. Now, I should have a list of several flags from each team that I exploited for this service. All I need to do is use the Python API to submit them all at once, and the API will give me confirmation about the flag submissions' success.
 
-All of the above code can be seen in `submit_real_template.py`.
+All of the above code can be seen in `submit.py`.
 
 ## How this Folder is Structured
 
 Let's say you want to submit an exploit.
 
-- `run_real_<servicename>.py` is your pwntools exploit script.
-- `submit_real_<servicename>.py` is your auto-submission + exploit runner script.
-- `exploit_thrower.py` is like our overall "main" function, which just waits every tick to scan the current directory for `submit_real_<servicename>.py` scripts. It runs each of those scripts, which in turn runs your exploits and submits the flags.
+- `<servicename>.py` is your pwntools exploit script. It should go in the `exploits` folder.
+- `submit.py` is your auto-submission + exploit runner script. It runs your exploit script and expects a flag in stdout.
+- `exploit_thrower.py` is your overall "main" function, which just waits every tick to scan the `exploits` directory for `<servicename>.py` scripts. It runs `submit.py` for each of those scripts, which in turn runs your exploits and submits the flags.
 
 ### Example
 
