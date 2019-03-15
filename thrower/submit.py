@@ -45,7 +45,7 @@ for target in targets:
     if target['team_name'] == 'gamma':
         continue
 
-    command = 'timeout 5 python run_real_' + sys.argv[3] + '.py '
+    command = 'timeout 5 python exploits/' + sys.argv[3] + '.py '
     command += '172.31.129.' + target['hostname'][-1] + ' ' + str(target['port']) + ' ' + str(target['flag_id'])
     try:
         flag = subprocess.check_output(command, shell=True)
